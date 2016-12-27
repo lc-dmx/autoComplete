@@ -1,4 +1,4 @@
-*[代码演示地址](http://6.lcdmx.applinzi.com/)
+[代码演示地址](http://6.lcdmx.applinzi.com/)
 
 输入字母实现自动模糊查询
 
