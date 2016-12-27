@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.4.4.js"></script>
+	<script type="text/javascript" src="jquery.autocomplete.js"></script>
+	<style type="text/css">
+		body{font-size: 14px;font-family: arial;margin: 0;padding: 0;}
+		a{text-decoration: none;font-size: 16px;font-weight: bold;}
+		.outer{margin: 10px;padding: 20px;}
+		.search{height: 150px;border:1px solid #00d3c4;padding: 5px;}
+		#condition{}
+		.result{margin: 10px 0 0 0;position: absolute;left: 250px;}
+		.day{margin: 20px 0;}
+		.day p{width: 500px;cursor: pointer;}
+		.day ol{width: 400px;}
+		.day ol li{width: 400px;padding: 2px;}
+	</style>
+</head>
+<body>
+<script>
+	
+	$(document).ready(function(){
+		var oWord;
+		var allOptions = $(".day a").text().split(" ");
+		console.log(allOptions.length);
+		$("#condition").keyup(function(){
+			oWord = $("#condition").val();
+			if (oWord=="") {
+				$(".result").html("");
+			}
+
+			// for (var i = 0; i < allOptions.length; i++){
+			// 	if(oWord == allOptions[i]){
+			// 		console.log(allOptions[i]);
+			// 		$(".result").append("<a href='#" + allOptions[i] +"'>" + allOptions[i] + "</a><br />");
+			// 	}
+			// }
+		});
+
+		$('#condition').autocomplete(allOptions,{max:6,}).result(function(event, data, formatted) {
+	            	$(".result").append("<a href='#" + data +"'>" + data + "</a><br />");
+	            });
+
+		$(".day a").parent().dblclick(function(){
+			scrollTo(0,0);
+			$("#condition").val("");
+			$(".result").html("");
+		});
+
+	});
+		
+</script>
+<div class="outer">
+	<div class="search">
+		<input type="text" id="condition" placeholder="Please enter a word" />
+		<div class="result"></div>
+	</div>
+
+	<div class="day">
+		<p><a name="adult">aeroplane </a>n. 飞机</p>
+		<ol>
+			<li>The aeroplane took off on time.</li>
+			<li>We took a flight in an aeoplane.</li>
+			<li>The aeroplane landed safety.</li>
+		</ol>
+		<p><a name="agenda">agenda </a>n. 议事日程</p>
+		<ol>
+			<li>adopt an agenda</li>
+			<li>on the top of agenda</li>
+			<li>at the top of the agenda (=most important)</li>
+		</ol>
+		<p><a name="airplane">airplane </a>n. 飞机</p>
+		<ol>
+			<li>The new airplane looked like a giant bird.</li>
+			<li>The airman jumped from the airplane with his parachute.</li>
+			<li>The airplane flies at 900 kilometers an hour.</li>
+		</ol>
+		<p><a name="ankle">ankle </a>n. 踝关节</p>
+		<ol>
+			<li>He fell down and broke his ankle.</li>
+			<li>Her ankle swelled up after the fell.</li>
+			<li>He hurted his ankle, so he had to be supported home.</li>
+		</ol>
+		<p><a name="appoint">appoint </a>v. 任命；委派</p>
+		<ol>
+			<li>to appoint a time for the meeting.</li>
+			<li>You may appoint a proxy to vote for you.</li>
+			<li>Company decided to appoint a new treasurer.</li>
+		</ol>
+		<p><a name="association">association </a>n. 协会；联系；联想</p>
+		<ol>
+			<li>the National Basketball Association (NBA)</li>
+			<li>There is an association between Christmas and parties.</li>
+			<li>What association do you have with green color?</li>
+		</ol>
+		<p><a name="barn">barn </a>n. 谷仓；牲口棚</p>
+		<ol>
+			<li>The cows ate hay in the barn.</li>
+			<li>The cows were driven into the barn.</li>
+			<li>They piled the barn with grain.</li>
+		</ol>
+		<p><a name="brow">brow </a>n. 额；眉毛；脊</p>
+		<ol>
+			<li>the brow of a hill</li>
+			<li>Sweat was dripping off his brow.</li>
+			<li>middle-brow</li>
+		</ol>
+		<p><a name="bulb">bulb </a>n. 电灯泡；球茎</p>
+		<ol>
+			<li>a tulip bulb</li>
+			<li>This desk lamp needs a new bulb.</li>
+			<li>change a bulb</li>
+		</ol>
+		<p><a name="chop">chop </a>v. 砍；劈；剁 n. 砍；剁；排骨</p>
+		<ol>
+			<li>Chop the onions up, please.</li>
+			<li>Did he get eaten? Or chopped into pieces?</li>
+			<li>chop wood</li>
+		</ol>
+		<p><a name="climate">climate </a>n. 气候；社会风气；一般趋势</p>
+		<ol>
+			<li>climate change</li>
+			<li>economic climate</li>
+			<li>Britain has a temperate climate.</li>
+		</ol>
+		<p><a name="commerce">commerce </a>n. 商业；贸易</p>
+		<ol>
+			<li>international commerce</li>
+			<li>Banks are the nerves of commerce.</li>
+			<li>He is the leader of the commerce.</li>
+		</ol>
+		<p><a name="considering">considering </a>v. 考虑；认为</p>
+		<ol>
+			<li>I'm considering going abroad.</li>
+			<li>Thank you for considering my request.</li>
+			<li>He is always considering himself a strong person.</li>
+		</ol>
+		<p><a name="crawl">crawl </a>v. 爬行</p>
+		<ol>
+			<li>crawl out the recession</li>
+			<li>We learn to crawl before we learn to walk.</li>
+			<li>Soliders quietly crawl to advance to enemy.</li>
+		</ol>
+		<p><a name="cue">cue </a>n. 提示；信号 v. 给提示</p>
+		<ol>
+			<li>psychological cue</li>
+			<li>He read the line with the cue.</li>
+			<li>That was the cue of outbreak of war.</li>
+		</ol>
+		<p><a name="despair">despair </a>n. 绝望 v. 绝望</p>
+		<ol>
+			<li>exclaim in despair</li>
+			<li>They despair of winning the game.</li>
+			<li>It's better to hope than despair.</li>
+		</ol>
+		<p><a name="empower">empower </a>v. 授权；使能够</p>
+		<ol>
+			<li>I empower my agent to make the deal for me.</li>
+			<li>Empower the poor to have a good life.</li>
+			<li>The new laws enpower the police to search private house.</li>
+		</ol>
+		<p><a name="encounter">encounter </a>n. 遭遇；邂逅 v. 遭遇</p>
+		<ol>
+			<li>We encounter every kind of difficulty.</li>
+			<li>It was a bloody encounter between the two armies.</li>
+			<li>a chance encounter in the park.</li>
+		</ol>
+		<p><a name="entertain">entertain </a>v. 娱乐；款待</p>
+		<ol>
+			<li>entertain friends at dinner</li>
+			<li>I feel how foolish i am to entertain doubts.</li>
+			<li>I entertain them with music.</li>
+		</ol>
+		<p><a name="exception">exception </a>n. 例外</p>
+		<ol>
+			<li>There is always an exception to any rule.</li>
+			<li>A true scientific law admits of no exception.</li>
+			<li>All students without exception must take the examination.</li>
+		</ol>
+		<p><a name="extreme">extreme </a>adj. 极度的；非常的 n. 极端</p>
+		<ol>
+			<li>She found the book uninteresting to the extreme.</li>
+			<li>extreme opinions</li>
+			<li>His political ideas are rather extreme.</li>
+		</ol>
+		<p><a name="factor">factor </a>n. 因素；代理人；系数 v. 把...因素包括进去；做代理商</p>
+		<ol>
+			<li>I factor my uncle's estate.</li>
+			<li>Self-confidence is the key factor of success.</li>
+			<li>a suncream with a protection factor of 8</li>
+		</ol>
+		<p><a name="farewell">farewell </a>n. 再会</p>
+		<ol>
+			<li>He made his farewell to his family.</li>
+			<li>wave a farewell</li>
+			<li>farewell to life</li>
+		</ol>
+		<p><a name="fate">fate </a>n. 命运</p>
+		<ol>
+			<li>The fate of the three men is unknown.</li>
+			<li>She wasn't a passive bystander of her fate.</li>
+			<li>I don't believe in fate.</li>
+		</ol>
+		<p><a name="gasoline">gasoline </a>n. 汽油</p>
+		<ol>
+			<li>Gasoline is distilled from crude oil.</li>
+			<li>Gasoline drained slowly from the tilted can.</li>
+			<li>His old car consumed much gasoline.</li>
+		</ol>
+		<p><a name="genius">genius </a>n. 天才</p>
+		<ol>
+			<li>He has a geniud for music.</li>
+			<li>His genius as a painter showed very early.</li>
+			<li>He's a genius at mathematics.</li>
+		</ol>
+		<p><a name="geometry">geometry </a>n. 几何学</p>
+		<ol>
+			<li>The students are learning solid geometry.</li>
+			<li>He 's well studied in geometry.</li>
+			<li>I feel that geometry is a difficult subject.</li>
+		</ol>
+		<p><a name="grab">grab </a>n. 抓取</p>
+		<ol>
+			<li>I jumped on the wall to grab the attention of the crowd.</li>
+			<li>grab a drink or a bite</li>
+			<li>They grab the right to use the port.</li>
+		</ol>
+		<p><a name="guilty">guilty </a>adj. 有罪的；内疚的</p>
+		<ol>
+			<li>The jury finds the prisoner guilty.</li>
+			<li>I felt guilty after breaking my promise.</li>
+			<li>I felt so guilty and angry about the whole issue.</li>
+		</ol>
+		<p><a name="gymnasium">gymnasium </a>n. 体育馆</p>
+		<ol>
+			<li>The game will be held in the gymnasium.</li>
+			<li>Our gymnasium lacks sports facilities.</li>
+			<li>He goes to the gymnasium to practice every day.</li>
+		</ol>
+		<p><a name="hell">hell </a>n. 地狱；苦境</p>
+		<ol>
+			<li>Sam's life has been hell since his wife passed away.</li>
+			<li>They would go to hell for their sins.</li>
+			<li>Go to hell!</li>
+		</ol>
+		<p><a name="honourable">honourable </a>adj. 可敬的；荣誉的</p>
+		<ol>
+			<li>Teaching is an honourable career.</li>
+			<li>He is the most honourable man.</li>
+			<li>honourable award</li>
+		</ol>
+		<p><a name="implement">implement </a>n. 工具 v. 执行</p>
+		<ol>
+			<li>The best implement for digging a garden is a spade.</li>
+			<li>The government is going to implement the new policies.</li>
+			<li>implement reform and opening-up</li>
+		</ol>
+		<p><a name="internship">internship </a>n. 实习；见习</p>
+		<ol>
+			<li>internship opportunity</li>
+			<li>I had an internship at local news agency.</li>
+			<li>I am in beijing for my internship.</li>
+		</ol>
+		<p><a name="jet">jet </a>n. 气流；喷气式飞机 v. 喷射</p>
+		<ol>
+			<li>The accident happened as the jet was about to take off.</li>
+			<li>A jet plane screamed past overhead.</li>
+			<li>The water will jet out.</li>
+		</ol>
+		<p><a name="kindergarten">kindergarten </a>n. 幼儿园</p>
+		<ol>
+			<li>It's noisy in the kindergarten.</li>
+			<li>Bring the children back from the kindergarten at four o'clock.</li>
+			<li>She looked after children in the kindergarten.</li>
+		</ol>
+		<p><a name="organization">organization </a>n. 组织；机构</p>
+		<ol>
+			<li>nonprofit organization</li>
+			<li>The organization has no membership yet.</li>
+			<li>They have established a student organization.</li>
+		</ol>
+		<p><a name="pour">pour </a>v. 倾倒；蜂拥而来</p>
+		<ol>
+			<li>Please pour me a cup of tea?</li>
+			<li>Crowds of people pour into the city every day.</li>
+		</ol>
+		<p><a name="pray">pray </a>v. 祈祷</p>
+		<ol>
+			<li>I pray you to forgive me.</li>
+			<li>People pray at church.</li>
+			<li>I pray your permission to speak.</li>
+		</ol>
+		<p><a name="preposition">preposition </a>n. 介词</p>
+		<ol>
+			<li>Preposition is abbreviated as "prep" in the dictionary.</li>
+			<li>The word is compounded of a preposition and a verb.</li>
+			<li>A preposition is used before nouns and pronouns.</li>
+		</ol>
+		<p><a name="prompt">prompt </a>adj. 迅速的；及时的 v. 提示；促使；鼓动 n. 激励；提示 adv. 准时地</p>
+		<ol>
+			<li>Will you prompt for us at the next performance?</li>
+			<li>The police prompt him to tell the truth.</li>
+			<li>They start at 7 o'clock prompt.</li>
+		</ol>
+		<p><a name="rack">rack </a>n. 架子；齿条；破坏 v. 折磨；放在架上；累积得分</p>
+		<ol>
+			<li>Many trees are twisted by the rack of the storm.</li>
+			<li>on the rack</li>
+			<li>to rack one's brain</li>
+		</ol>
+		<p><a name="range">range </a>n. 变动范围；射程；系列；山脉；靶场；牧场 v. 在某范围内变化；使并列；漫游</p>
+		<ol>
+			<li>The cattle are kept in the range.</li>
+			<li>They range widely in search of food.</li>
+			<li>What the range of your gun?</li>
+		</ol>
+		<p><a name="rarely">rarely </a>adv. 很少</p>
+		<ol>
+			<li>She is rarely seen in the public.</li>
+			<li>Fortune has rarely smiled on me.</li>
+			<li>She is old and rarely goes out.</li>
+		</ol>
+		<p><a name="resident">resident </a>n. 长期居民 adj. 居住的；常驻的</p>
+		<ol>
+			<li>I have been residented in the country for ten years.</li>
+			<li>permanent resident</li>
+			<li>resident aliens</li>
+		</ol>
+		<p><a name="respective">respective </a>adj. 各自的</p>
+		<ol>
+			<li>The tourist went back to their respective countries.</li>
+			<li>All men have their respective duties.</li>
+			<li>They are recognized specialists in their respective fields.</li>
+		</ol>
+		<p><a name="risk">risk </a>n. 风险 v. 冒...的风险</p>
+		<ol>
+			<li>run the risk of</li>
+			<li>Don't risk your health.</li>
+			<li>He wasn't afraid to run a risk.</li>
+		</ol>
+		<p><a name="semester">semester </a>n. 一学期</p>
+		<ol>
+			<li>His writing has improved greatly in this semester.</li>
+			<li>This semester will be my last one in this university.</li>
+			<li>My son got an excellent grade last semester.</li>
+		</ol>
+		<p><a name="senator">senator </a>n. 参议员</p>
+		<ol>
+			<li>The senator voted to support the president.</li>
+			<li>The senator was against the law.</li>
+			<li>The senator declaimed against higher taxes.</li>
+		</ol>
+		<p><a name="steamer">steamer </a>n. 汽船；轮船</p>
+		<ol>
+			<li>The steamer for England will leave on Wednesday.</li>
+			<li>The steamer sails for twenty miles an hour.</li>
+			<li>The steamer arrived in harbor last night.</li>
+		</ol>
+		<p><a name="trial">trial </a>n. 审判；试验</p>
+		<ol>
+			<li>The court gave the fair trail to the case.</li>
+			<li>My mother told me to cook by trial and error.</li>
+			<li>He is employed for two weeks on trial.</li>
+		</ol>
+		<p><a name="vapour">vapour </a>n. 水蒸气</p>
+		<ol>
+			<li>A clound is a mass of vapour in the sky.</li>
+			<li>When heated, water changes into vapour.</li>
+			<li>Vapour can be changed into liquid by cooling.</li>
+		</ol>
+		<p><a name="vibrate">vibrate </a>v. 振动；颤动</p>
+		<ol>
+			<li>The buildings seemed to vibrate.</li>
+			<li>The noise can vibrate the table.</li>
+			<li>The bridge will vibrate when a heavy truck pass.</li>
+		</ol>
+		<p><a name="cooperative">cooperative </a>adj. 合作的 n. 合作社</p>
+		<ol>
+			<li>We decided to set up a cooperative.</li>
+			<li>cooperative effort</li>
+			<li>I have always found her cooperative.</li>
+		</ol>
+		<p><a name="disastrous">disastrous </a>adj. 灾难性的</p>
+		<ol>
+			<li>The flood was disastrous to the economy.</li>
+			<li>a disastrous effect</li>
+			<li>The results of the flood were disastrous.</li>
+		</ol>
+		<p><a name="bone">bone </a>n. 骨头</p>
+		<ol>
+			<li>The dog buried a bone.</li>
+			<li>Throw the poor dog a bone.</li>
+			<li>Don't bone us!</li>
+		</ol>
+		<p><a name="noun">noun </a>n. 名词</p>
+		<ol>
+			<li>What's the noun form of this word?</li>
+			<li>a plural noun</li>
+			<li>They confuse the noun and verb forms.</li>
+		</ol>
+		<p><a name="paint">paint </a>v. 刷油漆；画；描绘 n. 油漆；颜料</p>
+		<ol>
+			<li>to paint a picture</li>
+			<li>We paint in the art room.</li>
+			<li>There's paint on your clothes.</li>
+		</ol>
+		<p><a name="pan">pan </a>n. 平底锅；烤盘 v. 淘金；遥摄；抨击</p>
+		<ol>
+			<li>to pan along the line of the dancers</li>
+			<li>The critics panned the film version of the novel.</li>
+			<li>I have never heard her pan anyone.</li>
+		</ol>
+		<p><a name="partly">partly </a>adv. 部分地</p>
+		<ol>
+			<li>What you say is partly wrong.</li>
+			<li>What he said is partly true.</li>
+			<li>He is partly to blame.</li>
+		</ol>
+		<p><a name="scene">scene </a>n. 场景；现场；景色</p>
+		<ol>
+			<li>We found a beautiful scene on the hill.</li>
+			<li>the final scene of a film</li>
+			<li>Keep away from the scene of the accident.</li>
+		</ol>
+		<p><a name="stick">stick </a>v. 粘贴；刺；戳 n. 柴枝</p>
+		<ol>
+			<li>The doctors sticks my finger with a needle to get blood sample.</li>
+			<li>I always stick to my promises.</li>
+			<li>Stick a label on your suitcase.</li>
+		</ol>
+		<p><a name="telegram">telegram </a>n. 电报</p>
+		<ol>
+			<li>I received a telegram from my father.</li>
+			<li>send a telegram</li>
+		</ol>
+		<p><a name="blast">blast </a>v. 爆破 n.冲击波；强劲气流；巨响</p>
+		<ol>
+			<li>All the windows broke with the force of the blast.</li>
+			<li>The bomb blast the root off.</li>
+			<li>He gave a blast on his trumpet.</li>
+		</ol>
+		<p><a name="cable">cable </a>n. 电缆；钢索</p>
+		<ol>
+			<li>cable cars</li>
+			<li>cable TV</li>
+			<li>power cable</li>
+		</ol>
+		<p><a name="cancer">cancer </a>n. 癌症</p>
+		<ol>
+			<li>lung cancer</li>
+			<li>Her mother died of breast cancer.</li>
+			<li>cancer cell</li>
+		</ol>
+		<p><a name="confidential">confidential </a>adj. 机密的；受信任的</p>
+		<ol>
+			<li>confidential documents</li>
+			<li>confidential spy</li>
+			<li>Don't let out the confidential information.</li>
+		</ol>
+		<p><a name="cope">cope </a>v. 应付；处理</p>
+		<ol>
+			<li>I cannot cope with that stubborn boy.</li>
+			<li>cope with problems</li>
+		</ol>
+		<p><a name="decent">decent </a>adj. 体面地；得体的</p>
+		<ol>
+			<li>He dreamed of living in decent conditions.</li>
+			<li>He made a decent record.</li>
+			<li>decent behaviour</li>
+		</ol>
+		<p><a name="distinction">distinction </a>n. 区别；区分；荣誉</p>
+		<ol>
+			<li>academic distinction</li>
+			<li>distinction between right and wrong</li>
+			<li>make a distinction</li>
+		</ol>
+		<p><a name="evidently">evidently </a>adv. 显然的</p>
+		<ol>
+			<li>He was evidently too tired to go any further.</li>
+			<li>She was evidently quite angry with the criticism.</li>
+			<li>She was in bed and evidently in great pain.</li>
+		</ol>
+		<p><a name="extraordinary">extraordinary </a>adj. 不平常的；非凡的</p>
+		<ol>
+			<li>His extraordinary skill was praised by all.</li>
+			<li>We gather some of the most beautiful and extraordinary scenery of France.</li>
+			<li>He married a girl of extraordinary beauty.</li>
+		</ol>
+		<p><a name="magnetic">magnetic </a>adj. 有吸引力的</p>
+		<ol>
+			<li>magnetic compass</li>
+			<li>She has a magnetic personality.</li>
+		</ol>
+		<p><a name="monument">monument </a>n. 纪念碑；不朽作品</p>
+		<ol>
+			<li>The monument is in honor of a scientist.</li>
+			<li>There is a massive monument in the square.</li>
+			<li>These recordings are a monument to his talent as a pianist.</li>
+		</ol>
+		<p><a name="mood">mood </a>n. 情绪；气氛</p>
+		<ol>
+			<li>Learn to change your somber mood.</li>
+			<li>In that crazy time, my mood went up and down like an elevator.</li>
+			<li>in a gray mood</li>
+		</ol>
+		<p><a name="operational">operational </a>adj. 操作的；运行的</p>
+		<ol>
+			<li>an operational aircraft</li>
+			<li>The new system became operational in March.</li>
+			<li>The lab is not operational yet.</li>
+		</ol>
+		<p><a name="process">process </a>n. 过程；工序 v. 处理；加工</p>
+		<ol>
+			<li>A meeting is in process.</li>
+			<li>the process of digestion</li>
+			<li>to process the data</li>
+		</ol>
+		<p><a name="receipt">receipt </a>n. 收据</p>
+		<ol>
+			<li>On receipt of the news, he left.</li>
+			<li>She placed the receipt in her wallet.</li>
+			<li>I paid the bill but he forgot to give me a receipt.</li>
+		</ol>
+		<p><a name="rescue">rescue </a>n. 救援 v. 救援</p>
+		<ol>
+			<li>come to one's rescue</li>
+			<li>rescue the hostages</li>
+			<li>He dived from the bridge to rescue the drowning child.</li>
+		</ol>
+		<p><a name="statistic">statistic </a>n. 统计数据</p>
+		<ol>
+			<li>official statistic</li>
+			<li>sample statistic</li>
+			<li>statistic analysis</li>
+		</ol>
+		<p><a name="upset">upset </a>v. 推翻；打乱；使心烦 adj. 沮丧的；难过的；不安的</p>
+		<ol>
+			<li>The rain upset our plans for a picnic.</li>
+			<li>I upset the soup all over the table.</li>
+			<li>The bad news upset me.</li>
+		</ol>
+		<p><a name="imitation">imitation </a>n. 模仿；仿制品</p>
+		<ol>
+			<li>imitation ability</li>
+			<li>He gives a good imitation of a lion's roar.</li>
+			<li>The watch is an imitation.</li>
+		</ol>
+		<p><a name="collar">collar </a>n. 衣领</p>
+		<ol>
+			<li>He always wears a collar and tie for work.</li>
+			<li>a lace collar</li>
+			<li>I turn up my collar against the wind.</li>
+		</ol>
+		<p><a name="port">port </a>n. 港口</p>
+		<ol>
+			<li>London used to be Britain's largest port.</li>
+			<li>to arrive at a port</li>
+			<li>port of discharge</li>
+		</ol>
+		<p><a name="incline">incline </a>n. 	倾斜 v. 使...倾向；爱好</p>
+		<ol>
+			<li>The government is more effective than we incline to think.</li>
+			<li>I'm inclined to tiredness in winter.</li>
+		</ol>
+		<p><a name="inhabitant">inhabitant </a>n. 居民</p>
+		<ol>
+			<li>He is studying the inhabitant of the Amazon.</li>
+			<li>The city's first inhabitant arrived in the 16th century.</li>
+		</ol>
+		<p><a name="aquatic">aquatic </a>n. 水生动物；水草 adj. 水生的；水中的</p>
+		<ol>
+			<li>aquatic plants</li>
+			<li>aquatic sports</li>
+		</ol>
+		<p><a name="pattern">pattern </a>n. 图案；式样；典范 v. 仿造；模仿；以图案装饰</p>
+		<ol>
+			<li>The curtains had a beautiful pattern of flowers.</li>
+			<li>We patterned this plan on the previous one.</li>
+		</ol>
+		<p><a name="impose">impose </a>vi. 利用；欺骗；施加影响 vt. 强加；征税；以...欺骗</p>
+		<ol>
+			<li>A new tax was imposed on fuel.</li>
+			<li>imposed a fraud on consumers</li>
+		</ol>
+		<p><a name="spatial">spatial </a>adj. 空间的</p>
+		<ol>
+			<li>The task is designed for test child's spatial awareness of kids.</li>
+			<li>This part of brain judges the spatial relationship between objects.</li>
+		</ol>
+		<p><a name="fleeting">fleeting </a>adj. 飞逝的；短暂的</p>
+		<ol>
+			<li>a fleeting glimpse</li>
+			<li>a fleeting moment of happiness</li>
+		</ol>
+		<p><a name="reed">reed </a>n. 芦苇；簧片</p>
+		<ol>
+			<li>Our roof was made of dried reed.</li>
+			<li>The river banks were overgrown with reed.</li>
+		</ol>
+		<p><a name="meteoric">meteoric </a>adj. 昙花一现的；大气的</p>
+		<ol>
+			<li>Love is always meteoric.</li>
+			<li>His early career had been meteoric.</li>
+		</ol>
+		<p><a name="eminent">eminent </a>adj. 著名的</p>
+		<ol>
+			<li>an eminent architect</li>
+			<li>a man of eminent good sense</li>
+		</ol>
+		<p><a name="indefinite">indefinite </a>adj. 模糊的；无限的</p>
+		<ol>
+			<li>She'll be away for an indefinite period.</li>
+			<li>an indefinite leave of absence</li>
+		</ol>
+		<p><a name="ingenuous">ingenuous </a>adj. 坦白的；天真的</p>
+		<ol>
+			<li>She is too ingenuous to believing what others say.</li>
+			<li>She gave ingenuous answers to the stranger's entire question.</li>
+		</ol>
+		<p><a name="commotion">commotion </a>n. 骚动；喧闹</p>
+		<ol>
+			<li>I heard a commotion and went to see what was happening.</li>
+			<li>The crowd waiting outside was causing a commotion.</li>
+		</ol>
+		<p><a name="rehearse">rehearse </a>vt. 预演 vi. 参加彩排</p>
+		<ol>
+			<li>We were given only two weeks to rehearse.</li>
+			<li>Today, we'll just be rehearsing the final scene.</li>
+		</ol>
+		<p><a name="periphery">periphery </a>n. 周边</p>
+		<ol>
+			<li>The condition makes it difficult for patients to see objects at the periphery of their vision.</li>
+			<li>industrial development on the periphery of the town</li>
+		</ol>
+		<p><a name="contaminate">contaminate </a>vt. 弄脏；污染</p>
+		<ol>
+			<li>The drinking water has become contaminated with lead.</li>
+		</ol>
+		<p><a name="grind">grind </a>n. 磨 v. 摩擦；磨碎；摇动手柄</p>
+		<ol>
+			<li>Would you please grind a pound of coffee for me?</li>
+			<li>'Well,' I said,grinding my cigarette nervously into the granite step.</li>
+		</ol>
+		<p><a name="resort">resort </a>n. 度假胜地；手段；凭借 v. 诉诸；常去</p>
+		<ol>
+			<li>seaside/ski/mountain, etc. resorts</li>
+			<li>a popular holiday resort</li>
+		</ol>
+		<p><a name="vegetarian">vegetarian </a>n. 素食者 adj. 素食的</p>
+		<ol>
+			<li>Is she a vegetarian?</li>
+		</ol>
+		<p><a name="flame">flame </a>n. 火焰；鲜红色；光辉；恋人；怀念；辱骂信息 v. 焚烧；面红；发辱骂信息；用火对待</p>
+		<ol>
+			<li>burst into flame</li>
+			<li>The flame were growing higher and higher.</li>
+		</ol>
+		<p><a name="perspective">perspective </a>n. 远景；看法；透视 adj. 透视的</p>
+		<ol>
+			<li>a global perspective</li>
+			<li>Try to see the issue from a different perspective.</li>
+		</ol>
+		<p><a name="resume">resume </a>v. 再继续；重新开始 n. 简历；摘要</p>
+		<ol>
+			<li>The meeting is expected to resume early tomorrow.</li>
+			<li>The dog resumed its post by the door.</li>
+		</ol>
+		<p><a name="portable">portable </a>adj. 轻便的；手提式的 n.手提打字机</p>
+		<ol>
+			<li>The documents have been typed into a portable computer.</li>
+			<li>The new portable computers are going like hot cakes.</li>
+		</ol>
+		<p><a name="conscience">conscience </a>n. 良心；责任心；顾忌</p>
+		<ol>
+			<li>to have a guilty conscience</li>
+			<li>This is a matter of individual conscience.</li>
+		</ol>
+		<p><a name="impress">impress </a>n. 印象 v. 给人印象；印刻；传送</p>
+		<ol>
+			<li>He impressed her with his sincerity.</li>
+			<li>She impressed me as a scholar.</li>
+		</ol>
+		<p><a name="cunning">cunning </a>adj. 狡猾的；有眼光的；精巧的；可爱的 n. 狡诈；灵巧</p>
+		<ol>
+			<li>a cunning liar</li>
+			<li>He was as cunning as a fox.</li>
+		</ol>
+		<p><a name="apparent">apparent </a>adj. 显然的；表面上的；似乎真实的</p>
+		<ol>
+			<li>If she had inner doubts,it was not apparent to anyone else.</li>
+			<li>For all his apparent wealth,Pat had no money to pay the rent.</li>
+		</ol>
+		<p><a name="prominent">prominent </a>adj. 杰出的；显著地</p>
+		<ol>
+			<li>a prominent politician</li>
+			<li>He played a prominent part in the campaign.</li>
+		</ol>
+		<p><a name="bend">bend </a>v. 弯曲；屈服 n. 弯曲物；弯道</p>
+		<ol>
+			<li>He bent and kissed her.</li>
+			<li>The saplings bent in the wind.</li>
+		</ol>
+		<p><a name="rigid">rigid </a>adj. 僵硬的；刻板的；严格的</p>
+		<ol>
+			<li>His rigid adherence to the rules made him unpopular.</li>
+			<li>The curriculum was too narrow and too rigid.</li>
+		</ol>
+		<p><a name="cloak">cloak </a>n. 斗篷；掩护 v. 遮掩；隐匿</p>
+		<ol>
+			<li>a cloak of secrecy</li>
+			<li>Their negotiations were cloak in secrecy.</li>
+		</ol>
+		<p><a name="melancholy">melancholy </a>n. 忧沉；悲哀；愁思 adj. 忧沉的；愁思的</p>
+		<ol>
+			<li>He felt melancholy after reading the tragedy novel.</li>
+			<li>a letter with melancholy news</li>
+		</ol>
+		<p><a name="reef">reef </a>n. 暗礁；收缩帆部分</p>
+		<ol>
+			<li>Soft corals do not form reefs.</li>
+			<li>The ship struck a hidden reef and went down with all hands.</li>
+		</ol>
+		<p><a name="glue">glue </a>n. 胶；粘性物 v. 粘；紧附于；</p>
+		<ol>
+			<li>This glue dosen't stick very well.</li>
+			<li>Idealism was the glue that held our group together.</li>
+		</ol>
+		<p><a name="myraid">myraid </a>adj. 无数的 n. 极大数量</p>
+		<ol>
+			<li>Desings are available in a myraid of colours.</li>
+			<li>the myraid problems of modern life.</li>
+		</ol>
+		<p><a name="orientate">orientate </a>v. 朝东；定位；适应</p>
+		<ol>
+			<li>to orientate the building</li>
+			<li>Orientate yourself to a new life.</li>
+			<li>It's hard to orientate oneself in the fog.</li>
+		</ol>
+		<p><a name="sustainable">sustainable </a>adj. 可忍受的；可支撑的；可持续的</p>
+		<ol>
+			<li>The loud music is not sustainable.</li>
+			<li>sustainable development</li>
+			<li>We need sustainable pillars for the temple.</li>
+		</ol>
+		<p><a name="consult">consult </a>v. 咨询；请教</p>
+		<ol>
+			<li>I wish to consult you on a few question.</li>
+			<li>consult a map</li>
+			<li>consult a lawyer</li>
+		</ol>
+		<p><a name="accuse">accuse </a>v. 指责；指控</p>
+		<ol>
+			<li>accuse sb of sth</li>
+			<li>They accuse the thief of stealing.</li>
+			<li>People accuse the government of corruption.</li>
+		</ol>
+		<p><a name="acquaint">acquaint </a>v. 使熟悉；使相识</p>
+		<ol>
+			<li>Please acquaint us with your plans.</li>
+			<li>acquaint sb with sb/sth</li>
+			<li>It takes time to acquaint you with a new job.</li>
+		</ol>
+		<p><a name="acquaintance">acquaintance </a>n. 相识；认识的人</p>
+		<ol>
+			<li>make one's acquaintance</li>
+			<li>I'm delighted to make your acquaintance.</li>
+			<li>He is not a friend but only an acquaintance.</li>
+		</ol>
+		<p><a name="acquisition">acquisition </a>n. 获得；得到的东西；收购</p>
+		<ol>
+			<li>the acquisition of knowledge</li>
+			<li>mergers and acquisition</li>
+			<li>The painting is her latest acquisition.</li>
+		</ol>
+		<p><a name="acute">acute </a>adj. 敏锐地；急性的；严重的；成锐角的</p>
+		<ol>
+			<li>There is an acute shortage of water.</li>
+			<li>He suffers from acute depression.</li>
+			<li>acute illness</li>
+		</ol>
+		<p><a name="attorney">attorney </a>n. 律师；代理人</p>
+		<ol>
+			<li>defence attorney</li>
+			<li>He acted as attorney for me.</li>
+			<li>He became a famous attorney.</li>
+		</ol>
+		<p><a name="formula">formula </a>n. 公式；配方；方案；客套语</p>
+		<ol>
+			<li>They proposed a third formula for the new swimming pool.</li>
+			<li>There is no sure formula for success.</li>
+			<li>"How do you do?"is a polite formula.</li>
+		</ol>
+		<p><a name="hospitalize">hospitalize </a>v. 送医院治疗；使住院</p>
+		<ol>
+			<li>to hospitalize a patient</li>
+			<li>You need to hospitalize your son.</li>
+		</ol>
+		<p><a name="consumption">consumption </a>n. 消耗</p>
+		<ol>
+			<li>Internet shopping is a new way of consumption.</li>
+			<li>The government encourages individuals consumption.</li>
+			<li>consumption oil/energy/money</li>
+		</ol>
+		<p><a name="distribution">distribution </a>n. 分布；分配</p>
+		<ol>
+			<li>food distribution</li>
+			<li>They organized the distribution of food and clothing in the disaster area.</li>
+			<li>The kind of plant has a very wide distribution.</li>
+		</ol>
+		<p><a name="outcome">outcome </a>n. 结果；成果</p>
+		<ol>
+			<li>Chance usually governs the outcome of the game.</li>
+			<li>This book was the outcome of scientific work.</li>
+			<li>The outcome was not what he expected.</li>
+		</ol>
+		<p><a name="halt">halt </a>n. 停顿下来 v. 暂停；中断</p>
+		<ol>
+			<li>My political career had come to a halt.</li>
+			<li>No one can halt the advance of history.</li>
+			<li>He tried to halt that debate.</li>
+		</ol>
+		<p><a name="reveal">reveal </a>v. 显露；泄露；透露</p>
+		<ol>
+			<li>His deeds reveal hime to be a kind man.</li>
+			<li>He laughed, revealing a line of white teeth.</li>
+			<li>to reveal a secret</li>
+		</ol>
+		<p><a name="ingredient">ingredient </a>n. 成分；配料；要素；因素</p>
+		<ol>
+			<li>secret ingredient</li>
+			<li>What is the ingredient in the medicine?</li>
+			<li>Cocoa is a basic ingredient for chocolates.</li>
+		</ol>
+		<p><a name="smart">smart </a>adj. 聪明的；敏捷的；时髦的；衣冠楚楚的 v. 剧痛；刺痛；感到难过</p>
+		<ol>
+			<li>smart pace</li>
+			<li>My eyes smart from the smoke.</li>
+			<li>to smart from one's sharp words</li>
+		</ol>
+		<p><a name="basin">basin </a>n. 脸盆；水池；盆地；流域</p>
+		<ol>
+			<li>This basin is made of plastic.</li>
+			<li>The whole river basin is covered with forest.</li>
+			<li>The low water exposes the dry basin.</li>
+		</ol>
+		<p><a name="pit">pit </a>n. 坑；凹洞；矿井 v. 使凹陷</p>
+		<ol>
+			<li>Earthquake can pit the surface of the earth.</li>
+			<li>in the pit of</li>
+			<li>The children were playing in the sand pit.</li>
+		</ol>
+		<p><a name="applicable">applicable </a>adj. 适用的；适当的</p>
+		<ol>
+			<li>Your suggestion is not applicable to me.</li>
+			<li>applicable rules</li>
+			<li>This rule is not applicable to foreigners.</li>
+		</ol>
+		<p><a name="beard">beard </a>n. 须；胡子</p>
+		<ol>
+			<li>He's decided to grow a bread.</li>
+			<li>short bread</li>
+			<li>This old man has a long bread.</li>
+		</ol>
+		<p><a name="blend">blend </a>v. 配合；混合；融合</p>
+		<ol>
+			<li>Water dosen't blend with oil.</li>
+			<li>These buildings blend in well with the trees.</li>
+			<li>When they sing, their voices blend nicely.</li>
+		</ol>
+		<p><a name="bold">bold </a>adj. 大胆的；醒目的；粗体的；无畏的；莽撞的</p>
+		<ol>
+			<li>a bold ,impudent child</li>
+			<li>bold action</li>
+			<li>It's very bold of them to venture to do so.</li>
+		</ol>
+		<p><a name="consultant">consultant </a>n. 顾问</p>
+		<ol>
+			<li>He was a consultant of the government.</li>
+			<li>marketing consultant</li>
+			<li>He dismisses a lot of the work of re-engineering consultants as mere rubbish.</li>
+		</ol>
+		<p><a name="destruction">destruction </a>n. 毁灭；引起毁灭的根源</p>
+		<ol>
+			<li>environmental destruction</li>
+			<li>The fire caused the destruction of my books.</li>
+			<li>weapons of mass destruction</li>
+		</ol>
+		<p><a name="exhaust">exhaust </a>v. 耗尽；使筋疲力尽 n. 排气；排气装置</p>
+		<ol>
+			<li>They had to exhaust the water of the well.</li>
+			<li>Smoke and exhaust are pollutants.</li>
+			<li>This sports will exhaust these boys.</li>
+		</ol>
+		<p><a name="influence">influence </a>n. 影响 v. 影响</p>
+		<ol>
+			<li>He has a great influence on me.</li>
+			<li>Her influence made me a better person.</li>
+			<li>A teacher has great influence over his pupils.</li>
+		</ol>
+		<p><a name="original">original </a>n. 原件 adj. 原来的；起初的</p>
+		<ol>
+			<li>Who was the original owner of this house?</li>
+			<li>Her translation sticks closely to the original.</li>
+			<li>I'll send the original to you by post.</li>
+		</ol>
+		<p><a name="prolong">prolong </a>v. 延长；拉长；拖长</p>
+		<ol>
+			<li>Good care may prolong a sick person's life.</li>
+			<li>We must prolong the runway of the airfield.</li>
+			<li>I don't know how to prolong the life of my battery.</li>
+		</ol>
+		<p><a name="secure">secure </a>adj.安全的；可靠地；稳定的 v. 使安全；使获得</p>
+		<ol>
+			<li>This bill will secure the rights of strikers.</li>
+			<li>I don't feel secure when i am alone in the house.</li>
+			<li>You must order your tickets early to secure against disappointment!</li>
+		</ol>
+		<p><a name="signature">signature </a>n. 签名</p>
+		<ol>
+			<li>You must put your signature on the cheque.</li>
+			<li>signature on the document</li>
+			<li>He faked his father's signature.</li>
+		</ol>
+		<p><a name="virtually">virtually </a>adv. 实际上</p>
+		<ol>
+			<li>virtually impossible</li>
+			<li>He was virtually a prisoner.</li>
+			<li>My book's virtually finished.</li>
+		</ol>
+		<p><a name="volcano">volcano </a>n. 火山</p>
+		<ol>
+			<li>The volcano is in eruption.</li>
+			<li>An active volcano may explode at any time.</li>
+			<li>It's risky to explore an active volcano.</li>
+		</ol>
+		<p><a name="withdraw">withdraw </a>v. 撤回；撤退</p>
+		<ol>
+			<li>We expected the army to withdraw.</li>
+			<li>He has decided to withdraw from the competition.</li>
+			<li>withdraw money</li>
+		</ol>
+		<p><a name="crop">crop </a>n. 农作物；收成</p>
+		<ol>
+			<li>a crop of apples</li>
+			<li>Rice is the chief crop in the area.</li>
+			<li>a poor crop of beans</li>
+		</ol>
+		<p><a name="diary">diary </a>n. 日记</p>
+		<ol>
+			<li>I write diary for English class.</li>
+			<li>She began to write her diary.</li>
+			<li>I keep a diary every day.</li>
+		</ol>
+		<p><a name="league">league </a>n. 联盟 v. 使结盟</p>
+		<ol>
+			<li>We must league together against this threat.</li>
+			<li>form a league</li>
+			<li>Our team plays in the football league.</li>
+		</ol>
+		<p><a name="lively">lively </a>adj. 活泼的；欢快的；栩栩如生的 adv. 轻快地</p>
+		<ol>
+			<li>He told a very lively story about his life.</li>
+			<li>He may be eighty, but he is still lively.</li>
+		</ol>
+		<p><a name="tiresome">tiresome </a>adj. 令人厌倦的</p>
+		<ol>
+			<li>It is a really tiresome issue for me.</li>
+			<li>He can be a very tiresome child at times.</li>
+		</ol>
+		<p><a name="penalty">penalty </a>n. 处罚</p>
+		<ol>
+			<li>The penalty for travelling without a ticket is $200.</li>
+			<li>neglected his health and paid the penalty</li>
+		</ol>
+		<p><a name="sniff">sniff </a>v. 吸气；嗅；以轻蔑的口气说</p>
+		<ol>
+			<li>The dog sniffed at the visitor suspiciously.</li>
+			<li>The countess sniffed her disapproval.</li>
+		</ol>
+		<p><a name="innumerable">innumerable </a>adj. 无数的</p>
+		<ol>
+			<li>Innumerable books have been written on the subject.</li>
+		</ol>
+		<p><a name="offspring">offspring </a>n. 后代；产物</p>
+		<ol>
+			<li>How many offspring does a lion usually have?</li>
+			<li>The device is the offspring of his inventive mind.</li>
+		</ol>
+		<p><a name="warrant">warrant </a>n. 正当理由；根据；准许 v. 保证；辩解；担保；授权</p>
+		<ol>
+			<li>No detail was too small to warrant his attention.</li>
+			<li>He almost gives his failings as a warrant for his greatness.</li>
+		</ol>
+		<p><a name="finely">finely </a>adv. 精美的；漂亮的；细碎的</p>
+		<ol>
+			<li>They are finely engineered boats.</li>
+			<li>These carrots are finely chopped.</li>
+		</ol>
+		<p><a name="stagger">stagger </a>n. 蹒跚，摇摆 v. 使吃惊；使犹豫；使错开时间</p>
+		<ol>
+			<li>The drunk man staggered across the room.</li>
+			<li>I was staggered to find it was six o'clock.</li>
+		</ol>
+		<p><a name="yacht">yacht </a>n. 游艇 v. 驾快艇</p>
+		<ol>
+			<li>His yacht sank suddenly during the holiday.</li>
+			<li>Our little dinghy was dwarfed by the big yacht.</li>
+		</ol>
+		<p><a name="peck">peck </a>v. 啄食 n. 啄食；轻吻；大量</p>
+		<ol>
+			<li>Hens pecked around in the yard.</li>
+			<li>He pecked at his dinner.</li>
+		</ol>
+		<p><a name="pickle">pickle </a>n. 腌汁；泡菜 v. 腌；泡</p>
+		<ol>
+			<li>My mother used to pickle vegetables.</li>
+			<li>By this time, he was hopelessly pickled.</li>
+		</ol>
+		<p><a name="resolute">resolute </a>adj. 坚决的；果断的</p>
+		<ol>
+			<li>He was resolute in carrying out his plan.</li>
+			<li>The Egyptians offered resolute resistance to the aggressors.</li>
+		</ol>
+		<p><a name="clamp">clamp </a>n. 螺丝钳；夹子 v. 夹住；固定</p>
+		<ol>
+			<li>The wood is held in position by a clamp.</li>
+			<li>clamped a tax on imports</li>
+		</ol>
+		<p><a name="pedal">pedal </a>n. 踏板 adj. 脚的 v. 踩踏板</p>
+		<ol>
+			<li>He pushed hard on the brake pedal to avoid a collision.</li>
+			<li>A pedal bicycle that has an attached motor.</li>
+		</ol>
+		<p><a name="herb">herb </a>n. 药草；香草</p>
+		<ol>
+			<li>I had to take the herb tea although it's bitter.</li>
+			<li>He alighted on a rare medical herb.</li>
+		</ol>
+		<p><a name="spice">spice </a>n. 香料；情趣 v. 用香料调味</p>
+		<ol>
+			<li>The soup needs a little more spice.</li>
+			<li>Have you spiced this cake?</li>
+		</ol>
+		<p><a name="invariably">invariably </a>adv. 不变化的</p>
+		<ol>
+			<li>His decision is invariably correct.</li>
+			<li>Invariably I take a nap after lunch.</li>
+		</ol>
+		<p><a name="prairie">prairie </a>n. 大草原</p>
+		<ol>
+			<li>Nothing but grass was to be seen in the prairie.</li>
+			<li>He farmed 2500acres of Nebraska prairie.</li>
+		</ol>
+		<p><a name="freak">freak </a>n. 怪人；反复无常 adj. 奇怪的 v. 使强烈反应</p>
+		<ol>
+			<li>a health/fitness/jazz, etc. freak</li>
+			<li>She was treated like a freak because she didn't want children.</li>
+		</ol>
+		<p><a name="deafen">deafen </a>v. 使...聋</p>
+		<ol>
+			<li>The noise of the siren was deafening her.</li>
+			<li>The head injury deafened her for life.</li>
+		</ol>
+		<p><a name="adept">adept </a>adj. 熟练地 n. 专家</p>
+		<ol>
+			<li>Helen is adept in music and her husband is adept in drawing.</li>
+			<li>My teacher is adept in designing robots.</li>
+		</ol>
+		<p><a name="fake">fake </a>n. 假货；欺骗；骗子 adj. 假的 v. 伪造</p>
+		<ol>
+			<li>He looked like a postman but he was really a fake.</li>
+			<li>He faked his father's signature.</li>
+		</ol>
+		<p><a name="shadowy">shadowy </a>adj. 有阴影的；朦胧的；虚幻的</p>
+		<ol>
+			<li>She saw a man waiting in the shadowy doorway.</li>
+			<li>They crouched together on a shadowy hillside.</li>
+		</ol>
+		<p><a name="aerial">aerial </a>adj. 空气的；航空的；空想的 n. 天线</p>
+		<ol>
+			<li>Aerial pollution is a problem that should be solved quickly.</li>
+			<li>Aerial photography</li>
+		</ol>
+		<p><a name="fringe">fringe </a>n. 流苏；次要；边缘；一排 v. 镶边</p>
+		<ol>
+			<li>These people live on the fringes of society.</li>
+			<li>The weaver fringed the edge of the scarf.</li>
+		</ol>
+		<p><a name="willow">willow </a>n. 柳树；柳木制品</p>
+		<ol>
+			<li>He waves baskets from willow.</li>
+			<li>Willow catkins are fluttering in the air.</li>
+		</ol>
+		<p><a name="reverent">reverent </a>adj. 恭敬地；虔诚的</p>
+		<ol>
+			<li>They all maintained a reverent silence.</li>
+			<li>Ellen looks almost reverent.</li>
+		</ol>
+		<p><a name="formidable">formidable </a>adj. 强大的；可怕的；难对付的</p>
+		<ol>
+			<li>The two players together make a formidable combination.</li>
+			<li>His mother is a formidable lady.</li>
+		</ol>
+		<p><a name="evaluation">evalution </a>n. 评价；评估</p>
+		<ol>
+			<li>market evaluation</li>
+			<li>We should make a proper evaluation of their work.</li>
+			<li>The product needs an expert's evaluation.</li>
+		</ol>
+		<p><a name="recognition">recognition </a>n. 认识；承认；认可；褒奖；酬劳</p>
+		<ol>
+			<li>She received recodnition for her many achievements.</li>
+			<li>Everyone is hungry for recognition.</li>
+			<li>My recognition of the face was immediate.</li>
+		</ol>
+		<p><a name="harmony">harmony </a>n. 和谐；协调</p>
+		<ol>
+			<li>be in harmony with</li>
+			<li>The progress of the society is based on harmony.</li>
+			<li>They cooperate in perfect harmony.</li>
+		</ol>
+		<p><a name="abstract">abstract </a>adj. 抽象的 v. 提取；作...的摘要 n. 摘要</p>
+		<ol>
+			<li>I cannot understand the abstract concept.</li>
+			<li>Workers abstract metal from ore.</li>
+			<li>Please abstract this scientific article.</li>
+		</ol>
+		<p><a name="accelerate">accelerate </a>v. 加速</p>
+		<ol>
+			<li>The decline of her health seemed to suddenly accelerate.</li>
+			<li>accelerate the pace</li>
+			<li>accelerate abruptly</li>
+		</ol>
+		<p><a name="accent">accent </a>n. 口音；腔调</p>
+		<ol>
+			<li>She speaks fluent Chinese with no accent.</li>
+			<li>He has a strong American accent.</li>
+			<li>Our accent is on providing our customers with dependable service.</li>
+		</ol>
+		<p><a name="accordance">accordance </a>n. 一致；按照</p>
+		<ol>
+			<li>My opinion is in accordance with his in this matter.</li>
+			<li>in accordance with your orders</li>
+			<li>It's in accordance with the interest of the people.</li>
+		</ol>
+		<p><a name="accordingly">accordingly </a>adv. 相应地；因此</p>
+		<ol>
+			<li>He told me the situation and i must act accordingly.</li>
+			<li>I am your mum, so accordingly I should take care of you.</li>
+			<li>She's an expert in her field, and is paid accordingly.</li>
+		</ol>
+		<p><a name="accumulate">accumulate </a>v. 积累</p>
+		<ol>
+			<li>Accumulate strength for a take-off.</li>
+			<li>Accumulate from small step and you can get to the top.</li>
+		</ol>
+		<p><a name="accuracy">accuracy </a>n. 精确性；准确度</p>
+		<ol>
+			<li>Her accuracy with the gun surprised everyone.</li>
+			<li>Maps shoule be drawn with remarkable accuracy.</li>
+			<li>You should check the accuracy of the data.</li>
+		</ol>
+		<p><a name="grim">grim </a>adj. 严肃的；坚定地；冷酷的</p>
+		<ol>
+			<li>Her face wore a grim look.</li>
+			<li>this is a grim reality</li>
+			<li>grim courage</li>
+		</ol>
+		<p><a name="bearing">bearing </a>n. 举止；风度；方位；轴承 v. 忍受</p>
+		<ol>
+			<li>He is a man of soldierly bearing.</li>
+			<li>a ball bearing</li>
+			<li>a princely bearing</li>
+		</ol>
+		<p><a name="crude">crude </a>adj. 未加工的；粗鲁的；简陋的</p>
+		<ol>
+			<li>China is a country rich in crude oil.</li>
+			<li>The cottage wears a very crude appearance.</li>
+			<li>crude oil</li>
+		</ol>
+		<p><a name="dictate">dictate </a>v. 听写；口述；命令；要求 n. 命令；指示</p>
+		<ol>
+			<li>The teacher will dictate a passage to the class.</li>
+			<li>Do not dictate to me to do that.</li>
+			<li>I will never go against the dictate of my father.</li>
+		</ol>
+		<p><a name="dose">dose </a>n. 剂量；一剂</p>
+		<ol>
+			<li>Time is a dose of good medicine.</li>
+			<li>a dose of sth</li>
+			<li>He took a fatal dose of drug.</li>
+		</ol>
+		<p><a name="dump">dump </a>v. 倒空 n. 垃圾场</p>
+		<ol>
+			<li>There is a dump behind the house.</li>
+			<li>Some people just dump their rubbish in the river.</li>
+			<li>Beijing dumps cheap steel on our markets.</li>
+		</ol>
+		<p><a name="jury">jury </a>n. 陪审团；评委会</p>
+		<ol>
+			<li>The jury are unable to reach a unanimous decision.</li>
+			<li>The jury brought in a verdict of guilty.</li>
+			<li>an unbiased jury</li>
+		</ol>
+		<p><a name="loyalty">loyalty </a>n. 忠诚</p>
+		<ol>
+			<li>His loyalty to his friends was never in doubt.</li>
+			<li>The general's loyalty to the nation could not be questioned.</li>
+			<li>I'm utterly convinced of your loyalty.</li>
+		</ol>
+		<p><a name="precaution">precaution </a>n. 预防；预防措施</p>
+		<ol>
+			<li>It's a wise precaution to lock all the doors.</li>
+			<li>safety precaution</li>
+			<li>I took the precaution of locking everything.</li>
+		</ol>
+		<p><a name="rouse">rouse </a>v. 唤醒；觉醒</p>
+		<ol>
+			<li>The speaker was trying to rouse the audience to enthusiasm.</li>
+			<li>I rouse at the six in the morning.</li>
+			<li>However, she was not going to rouse him from his sleep.</li>
+		</ol>
+		<p><a name="sector">sector </a>n. 部门；行业；扇形</p>
+		<ol>
+			<li>The agriculture sector must be placed at the center of development.</li>
+			<li>Tourism is a growing market sector.</li>
+			<li>economic sector</li>
+		</ol>
+		<p><a name="slam">slam </a>v. 砰地关上</p>
+		<ol>
+			<li>Close the door carefullt, don't slam it.</li>
+			<li>I have told him many times no to slam the door.</li>
+		</ol>
+		<p><a name="tragedy">tragedy </a>n. 悲剧；灾难；惨事</p>
+		<ol>
+			<li>It was a tragedy that she died so young.</li>
+			<li>Father's sudden death was a tragedy to his family.</li>
+			<li>It's a tragedy that one lacks confidence in himself.</li>
+		</ol>
+		<p><a name="repertoire">repertoire </a>n. 全部节目；全部才能</p>
+		<ol>
+			<li>She has a vast repertoire of smiles.</li>
+			<li>I know it's probably not in your repertoire.</li>
+			<li>The repertoire will surprise the audience.</li>
+		</ol>
+		<p><a name="concert">concert </a>n. 音乐会；一致；和谐 v. 一致行动</p>
+		<ol>
+			<li>Smoking is a forbidden in the concert hall.</li>
+			<li>They did not act in concert with one another.</li>
+			<li>They were able to concert their difference.</li>
+		</ol>
+		<p><a name="flaw">flaw </a>n. 缺点；裂纹 v.变得有缺陷；使破裂</p>
+		<ol>
+			<li>Flaws have appeared in the new version of the software.</li>
+			<li>They share the character flaw of arrogance.</li>
+		</ol>
+		<p><a name="insulator">insulator </a>n. 绝缘体</p>
+		<ol>
+			<li>Fat is an ideal insulator against the cold.</li>
+		</ol>
+		<p><a name="brisk">brisk </a>adj. 敏锐地；凛冽的；活泼的；快的</p>
+		<ol>
+			<li>a brisk walk</li>
+			<li>to set off at a brisk pace</li>
+		</ol>
+		<p><a name="compulsory">compulsory </a>adj. 被强制的；义务的</p>
+		<ol>
+			<li>Is English a compulsory subject?</li>
+		</ol>
+		<p><a name="presume">presume </a>v. 假定；推测</p>
+		<ol>
+			<li>The missing girl is presumed dead.</li>
+			<li>We cannot presume the existence of life on other planets.</li>
+		</ol>
+		<p><a name="controversy">controversy </a>n. （公开的）争论；争议</p>
+		<ol>
+			<li>Controversy exists as to how these drugs are.</li>
+			<li>The mayor will try to accord the controversy over the housing scheme.</li>
+		</ol>
+		<p><a name="speculate">speculate </a>v. 推测；好奇；深思；投机</p>
+		<ol>
+			<li>It is useless to speculate why he did it.</li>
+			<li>I wouldn't like to speculate the reason for her resignation.</li>
+		</ol>
+		<p><a name="fling">fling </a>n. 投掷；漫不经心的一段（感情） v. 投；急冲；猛跳；激动地说</p>
+		<ol>
+			<li>Someone had flung a brick through the window.</li>
+			<li>fling propriety away</li>
+		</ol>
+		<p><a name="roam">roam </a>v. 漫游；闲逛</p>
+		<ol>
+			<li>The sheep are allowed to roam freely on this land.</li>
+			<li>He settled down after years of roaming.</li>
+		</ol>
+		<p><a name="intent">intent </a>n. 意图；目的；含义 adj. 专心的；决心的；热心的</p>
+		<ol>
+			<li>The original intent of the conference was to make a deal.</li>
+			<li>To all intents and purposes the case is closed.</li>
+		</ol>
+		<p><a name="glitter">glitter </a>n. 灿烂；闪烁 v. 灿烂；闪烁</p>
+		<ol>
+			<li>The ceiling of the catherdral glittered with gold.</li>
+			<li>The water glittered in the sunlight.</li>
+		</ol>
+		<p><a name="diagnose">diagnose </a>v. 诊断</p>
+		<ol>
+			<li>He was diagnosed with cancer.</li>
+			<li>They use saliva to diagnose the disease.</li>
+		</ol>
+		<p><a name="opaque">opaque </a>adj. 不透明的；难懂的</p>
+		<ol>
+			<li>This is an opaque cup.</li>
+			<li>He interposed an opaque body between a light and the eye.</li>
+		</ol>
+		<p><a name="crooked">crooked </a>adj.弯曲的；歪的；不老实的；不正直的</p>
+		<ol>
+			<li>a village of crooked streets</li>
+			<li>a crooked nose/smile</li>
+		</ol>
+		<p><a name="fort">fort </a>n. 堡垒；要塞</p>
+		<ol>
+			<li>The attack succeeded, and the fort was taken.</li>
+			<li>The fort occupies a commanding position.</li>
+		</ol>
+		<p><a name="flatter">flatter </a>v. 奉承；取悦；炫耀 n. 平整工具</p>
+		<ol>
+			<li>I felt flattered at being asked to give a lecture.</li>
+			<li>a photograph that flatters its subject</li>
+		</ol>
+		<p><a name="lining">lining </a>n. 衬里；内层</p>
+		<ol>
+			<li>The lining of my coat is torn.</li>
+			<li>Aspirin can ulcerate the stomach lining.</li>
+		</ol>
+		<p><a name="rave">rave </a>n. 狂吼；狂暴 v. 愤怒的说；咆哮</p>
+		<ol>
+			<li>She was shouting and raving at them.</li>
+			<li>The critics raved about his performance in 'Hamlet'.</li>
+		</ol>
+		<p><a name="pirate">pirate </a>n. 海盗；侵权者 v. 侵犯版权；翻印；掠夺</p>
+		<ol>
+			<li>There were reports that a pirate ship had come looking for treasure.</li>
+			<li>It was worthwhile to be a pirate, after all.</li>
+		</ol>
+		<p><a name="enclosure">enclosure </a>n. 附件；围墙；围绕</p>
+		<ol>
+			<li>There are several enclosures in the envelope.</li>
+			<li>I received your enclosure with gratitude.</li>
+		</ol>
+		<p><a name="composer">composer </a>n. 创作者</p>
+		<ol>
+			<li>He's a composer of pop music.</li>
+			<li>Brooks is an excellent composer.</li>
+		</ol>
+		<p><a name="descent">descent </a>n. 下落；家世；倾斜；侵袭</p>
+		<ol>
+			<li>There was a descent of temperature after the rain.</li>
+			<li>a person of African descent</li>
+		</ol>
+		<p><a name="calibration">calibration </a>n. 刻度；校准</p>
+		<ol>
+			<li>There is a calibration error in your experiment.</li>
+			<li>This calibration is good for bring up talents.</li>
+		</ol>
+		<p><a name="witty">witty </a>adj. 幽默的；诙谐的</p>
+		<ol>
+			<li>She is a witty talker.</li>
+			<li>The star clown was considered a master of witty banter.</li>
+		</ol>
+		<p><a name="regiment">regiment </a>n. 团；大量 v. 组编成团；组织；严格管制</p>
+		<ol>
+			<li>A regiment was stationed in our town.</li>
+			<li>He was a dishonour to his regiment.</li>
+		</ol>
+		<p><a name="impart">impart </a>v. 传授；赋予；告知</p>
+		<ol>
+			<li>A teacher's aim is to impart knowledge.</li>
+			<li>Only the president's strong control was able to impart some sense of seriousness to the meeting.</li>
+		</ol>
+		<p><a name="choke">choke </a>v. 窒息；阻塞；使某人停止呼吸</p>
+		<ol>
+			<li>She almost choked to death in the thick fumes.</li>
+			<li>He was choking on a piece of toast.</li>
+		</ol>
+		<p><a name="thicken">thicken </a>v. 变浓；使...厚；变为复杂</p>
+		<ol>
+			<li>The crowd thickened near the doorway.</li>
+			<li>The leader's departure thickens the problems. Our apprehension thickened.</li>
+		</ol>
+		<p><a name="mentality">mentality </a>n. 精神力；智力；头脑作用</p>
+		<ol>
+			<li>a criminal mentality</li>
+			<li>I cannot understand the mentality of football hooligans.</li>
+		</ol>
+		<p><a name="fuse">fuse </a>n. 保险丝；引线 v. 融化；融合；装导线</p>
+		<ol>
+			<li>The two companies have been fused into a single organization.</li>
+			<li>It seems that you've blown a fuse.</li>
+		</ol>
+		<p><a name="jog">jog </a>n. 轻推；漫步 v. 轻推；慢跑</p>
+		<ol>
+			<li>He goes jogging every night.</li>
+			<li>Here the boundary jogs south</li>
+		</ol>
+		<p><a name="accommodation">accommodation </a>n. 住处；适应；和解</p>
+		<ol>
+			<li>I will arrange the accommodation of my plans to yours.</li>
+			<li>look for an accommodation</li>
+			<li>The price will exclude accommodation.</li>
+		</ol>
+		<p><a name="accustomed">accustomed </a>adj. 习惯的 v. 习惯</p>
+		<ol>
+			<li>be accustomed to hard work</li>
+			<li>I have accustomed myself to working for long hours.</li>
+			<li>I am accustomed to sleeping late.</li>
+		</ol>
+		<p><a name="elaborate">elaborate </a>v. 精心制作；详细阐述 adj. 精心的；详细的</p>
+		<ol>
+			<li>elaborate a plan for</li>
+			<li>He had a new plan but refused to elaborate it.</li>
+			<li>It's an elaborate design.</li>
+		</ol>
+		<p><a name="fragment">fragment </a>n. 碎片；片段 v. 使成碎片；使分裂</p>
+		<ol>
+			<li>This play is only a fragment.</li>
+			<li>The clouds fragment and out comes the sun.</li>
+			<li>I overheard a fragment of their conversation.</li>
+		</ol>
+		<p><a name="fur">fur </a>n. 毛皮；皮草；软毛</p>
+		<ol>
+			<li>The dog's fur has some blood.</li>
+			<li>Cats are coverd with soft fur.</li>
+			<li>fur coats</li>
+		</ol>
+		<p><a name="inevitable">inevitable </a>adj. 不可避免的；必定的</p>
+		<ol>
+			<li>This is an inevitable disaster.</li>
+			<li>It is inevitable that the development of human society will come to depend more and more on the ocean.</li>
+		</ol>
+		<p><a name="pad">pad </a>n. 垫子；便签薄；爪垫；发射台；小块；住处；房间 v. 走路；加上衬垫；填塞；踏平</p>
+		<ol>
+			<li>I saw him pad the corridor.</li>
+			<li>Come back to my pad.</li>
+			<li>Pad the back of the car seat with a pillow.</li>
+		</ol>
+		<p><a name="plot">plot </a>n. 小块用地；地区图；情节；阴谋；秘密计划 v. 划分；设计情节；绘图；密谋</p>
+		<ol>
+			<li>I gave the vegetable plot a quick dig.</li>
+			<li>We try to plot the course of the plane.</li>
+			<li>The military plot a coup.</li>
+		</ol>
+		<p><a name="reform">reform </a>n. 改革 v. 改造</p>
+		<ol>
+			<li>We are going to reform this law.</li>
+			<li>reform a criminal</li>
+			<li>She is the oponent of tax reform.</li>
+		</ol>
+		<p><a name="simplify">simplify </a>v. 简化</p>
+		<ol>
+			<li>This dictionary tries to simplify the meanings of words.</li>
+			<li>Can you simplify your language a little?</li>
+			<li>Eliminate the unnecessary and simplify your life.</li>
+		</ol>
+		<p><a name="sorrow">sorrow </a>n. 悲哀</p>
+		<ol>
+			<li>I felt great sorrow at her death.</li>
+			<li>We must convert sorrow into strength.</li>
+			<li>A man in sorrow is anxious for sympathy.</li>
+		</ol>
+		<p><a name="treasure">treasure </a>n. 财富；珍宝 v. 珍爱；珍惜；珍藏</p>
+		<ol>
+			<li>We should treasure our fraternity.</li>
+			<li>priceless treasure</li>
+			<li>You must treasure your life.</li>
+		</ol>
+		<p><a name="phrase">phrase </a>n. 短语；词组 v. 叙述；措辞</p>
+		<ol>
+			<li>The teacher dictated the phrase to the class.</li>
+			<li>the set phrase</li>
+			<li>I phrase my request very carefully.</li>
+		</ol>
+		<p><a name="pity">pity </a>v. 怜悯；同情 n. 怜悯；同情；憾事</p>
+		<ol>
+			<li>I saved her out of for her child.</li>
+			<li>I feel no pity for you at all.</li>
+			<li>It's a pity that you have to go so soon.</li>
+		</ol>
+		<p><a name="storey">storey </a>n. 楼层</p>
+		<ol>
+			<li>He works on the tenth storey of the office building.</li>
+			<li>His room is on the second storey.</li>
+		</ol>
+		<p><a name="beam">beam </a>n. 梁；光线；容光焕发 v. 发出光热；发射电波；照射；眉开眼笑</p>
+		<ol>
+			<li>Suddenly the beam of the sun flashed into his face.</li>
+			<li>I knocked my head on a low beam.</li>
+			<li>to beam radio signals</li>
+		</ol>
+		<p><a name="brand">brand </a>n. 品牌；商标；烙印 v. 侮辱；铭刻于；加商标于</p>
+		<ol>
+			<li>to brand the cattle</li>
+			<li>The were beanded as liars and cheats.</li>
+			<li>They brand him a rebel.</li>
+		</ol>
+		<p><a name="community">community </a>n. 社区；团体；群落</p>
+		<ol>
+			<li>He refuses to join any community.</li>
+			<li>voluntary community work</li>
+			<li>ecological community</li>
+		</ol>
+		<p><a name="comparsion">comparsion </a>n. 比较；对比</p>
+		<ol>
+			<li>My shoes are small in comparsion with my sister's.</li>
+			<li>make a comparsion</li>
+			<li>By comparsion with London, Paris is small.</li>
+		</ol>
+		<p><a name="criticize">criticize </a>v. 批评；责备</p>
+		<ol>
+			<li>I often criticize myself.</li>
+			<li>He is too ready to criticize others.</li>
+			<li>I don't pretend to criticize,but...</li>
+		</ol>
+		<p><a name="distribute">distribute </a>v. 分发；分配；散布；配给</p>
+		<ol>
+			<li>We distribute handbills on the street every weekend.</li>
+			<li>Distribute grass seed over the lawn.</li>
+			<li>ERP requires the enterprise to distribute resources properly.</li>
+		</ol>
+		<p><a name="enforce">enforce </a>v. 强制；执行；加强</p>
+		<ol>
+			<li>Use facts to enforce your argument.</li>
+			<li>Don't enforce your will on the child.</li>
+			<li>enforce a law</li>
+		</ol>
+		<p><a name="feasible">feasible </a>adj. 可行的；行得通的</p>
+		<ol>
+			<li>It's not feasible to leave the problems to him to solve.</li>
+			<li>This is a feasible plan.</li>
+			<li>Your proposals sound quite feasible.</li>
+		</ol>
+		<p><a name="following">following </a>adj. 接着的；下列的 v. 跟随 n. 追随者；下列各项</p>
+		<ol>
+			<li>She has a keen following among rock fans.</li>
+			<li>The following have been chosen to play in the match.</li>
+			<li>Answer the following questions.</li>
+		</ol>
+		<p><a name="frequency">frequency </a>n. 频率；频数；频繁</p>
+		<ol>
+			<li>The frequency of his visits annoyed her.</li>
+			<li>The pitch depends on the frequency.</li>
+			<li>Accidents are happening with increasing frequency.</li>
+		</ol>
+		<p><a name="increasingly">increasingly </a>adv. 愈加；日益</p>
+		<ol>
+			<li>He became increasingly impatient.</li>
+			<li>She grow increasingly to rely on him.</li>
+			<li>People are becoming increasingly worried about pollution.</li>
+		</ol>
+		<p><a name="injection">injection </a>n. 注射；注射剂；注入</p>
+		<ol>
+			<li>The injection site can be the arm or the thigh.</li>
+			<li>The doctor gave her an injection to reduce the pain.</li>
+			<li>I'll have to give you an injection.</li>
+		</ol>
+		<p><a name="insight">insight </a>n. 洞察力；见识</p>
+		<ol>
+			<li>Good teachers have insight into children's emotions.</li>
+			<li>The novelist has a subtle insight into human nature.</li>
+			<li>The detective was a man with considerable insight.</li>
+		</ol>
+		<p><a name="interaction">interaction </a>n. 相互作用；相互影响；相互交流</p>
+		<ol>
+			<li>The interaction of the two groups produced many good ideas.</li>
+			<li>interaction among students and teachers</li>
+			<li>There should be more interaction between you and your partner!</li>
+		</ol>
+		<p><a name="legal">legal </a>adj. 合法的；法律的</p>
+		<ol>
+			<li>It was a legal business.</li>
+			<li>a legal question</li>
+		</ol>
+		<p><a name="limited">limited </a>adj. 有限的 v. 限制</p>
+		<ol>
+			<li>We limited the expense of the trip.</li>
+			<li>Human beings have limited tolerance of noise.</li>
+			<li>His knowledge of this subject is limited.</li>
+		</ol>
+		<p><a name="media">media </a>n. 媒介；居中；'medium'的复数</p>
+		<ol>
+			<li>media campaign</li>
+			<li>The trial was fully reported in the media.</li>
+			<li>News media have a great influence on people's mind.</li>
+		</ol>
+		<p><a name="mill">mill </a>n. 磨坊；面粉厂；工厂；碾碎机 v. 碾碎；磨碎</p>
+		<ol>
+			<li>The mill employs a thousand workers.</li>
+			<li>to mill flour</li>
+			<li>to grind wheat in a mill</li>
+		</ol>
+		<p><a name="objection">objection </a>n. 反对；异议</p>
+		<ol>
+			<li>None of them raised any objection.</li>
+			<li>I have no objection to their plan.</li>
+			<li>He took objection to what I said.</li>
+		</ol>
+		<p><a name="plunge">plunge </a>v. 投入；跳进；猛跌 n. 投入；跳进；猛跌</p>
+		<ol>
+			<li>The whale took a plunge into the deep water.</li>
+			<li>Prices started a downward plunge.</li>
+			<li>They finally decided to take the plunge and get married.</li>
+		</ol>
+		<p><a name="stoop">stoop </a>v. 弯腰；卑屈；俯冲 n. 弯腰；卑屈；俯冲</p>
+		<ol>
+			<li>Try not to walk with a stoop.</li>
+			<li>Don't stoop to quarrel with her about it.</li>
+			<li>Eagles stoop at a prey.</li>
+		</ol>
+		<p><a name="temper">temper </a>n. 脾气；性情；心绪；闹情绪 v. 锻炼；使回火；使调和</p>
+		<ol>
+			<li>temper one's spending</li>
+			<li>He lost his temper.</li>
+			<li>The sea tempers the climates.</li>
+		</ol>
+		<p><a name="voluntary">voluntary </a>adj. 志愿的；自发的</p>
+		<ol>
+			<li>She was a voluntary helper.</li>
+			<li>In his spare time, he engages in voluntary work.</li>
+			<li>She is a voluntary worker at the hospital.</li>
+		</ol>
+		<p><a name="heritage">heritage </a>n. 遗产；继承物；传统</p>
+		<ol>
+			<li>The building is part of our national heritage.</li>
+			<li>cultural heritage</li>
+			<li>We are proud of our heritage and culture.</li>
+		</ol>
+		<p><a name="transition">transition </a>n. 转变；过渡；变迁</p>
+		<ol>
+			<li>The transition is almost inperceptible.</li>
+			<li>Such a sudden transition must affect her.</li>
+			<li>transition point</li>
+		</ol>
+		<p><a name="cafe">cafe </a>n. 咖啡馆</p>
+		<ol>
+			<li>She works in a cafe.</li>
+			<li>go into a cafe</li>
+		</ol>
+		<p><a name="delight">delight </a>n. 高兴；快乐 v. 使高兴</p>
+		<ol>
+			<li>Her heart beats fast with delight.</li>
+			<li>Beautiful scieneries delight the eyes.</li>
+			<li>She clapped her hands in delight.</li>
+		</ol>
+		<p><a name="silly">silly </a>adj. 愚蠢的</p>
+		<ol>
+			<li>Don't be silly.</li>
+			<li>I look pretty silly in this dress.</li>
+			<li>It was silly of you to trust him.</li>
+		</ol>
+		<p><a name="strike">strike </a>v. 打；袭击；罢工 n. 打击；罢工；袭击</p>
+		<ol>
+			<li>Why did you strike him?</li>
+			<li>strike it rich</li>
+			<li>Bus drivers decided to go on strike.</li>
+		</ol>
+		<p><a name="surface">surface </a>n. 表面 v. 加表层；显露</p>
+		<ol>
+			<li>Glass has a smooth surface.</li>
+			<li>He didn't surface today until after eleven.</li>
+		</ol>
+		<p><a name="vocation">vocation </a>n. 职业；行业；职务</p>
+		<ol>
+			<li>She struggle for years to find her true vocation.</li>
+			<li>He is desperate to pursue his vocation as an artist.</li>
+		</ol>
+		<p><a href="mercurial">mercurial </a>adj. 反复的；水银的；灵活的；多变的</p>
+		<ol>
+			<li>Emily's mercurial temperament made her difficult to live with.</li>
+			<li>She has a mercurial turn of consersation.</li>
+		</ol>
+		<p><a href="plead">plead </a>v. 乞求；作...答辩；为...争辩</p>
+		<ol>
+			<li>She pleaded with him not to go.</li>
+			<li>plead guilty</li>
+		</ol>
+		<p><a href="postal">postal </a>adj. 邮政的</p>
+		<ol>
+			<li>The next postal delivery is at 4 o'clock.</li>
+			<li>We have two postal deliveries each day.</li>
+		</ol>
+		<p><a href="cosset">cosset </a>n. 宠儿 v. 宠爱；溺爱</p>
+		<ol>
+			<li>She had been cosset by her parents all during her childhood.</li>
+			<li>My wife is very keen on raising chickens as cosset.</li>
+		</ol>
+		<p><a href="exceed">exceed </a>v. 超过；领先；超出界限</p>
+		<ol>
+			<li>His achievements have exceeded expectations.</li>
+			<li>The price will not exceed 100.</li>
+		</ol>
+		<p><a href="disdain">disdain </a>n. 轻蔑 v. 蔑视</p>
+		<ol>
+			<li>She disdained his offer of help.</li>
+			<li>He disdained to turn to his son for advice.</li>
+		</ol>
+		<p><a href="solidarity">solidarity </a>n. 团结</p>
+		<ol>
+			<li>Demonstrations were held as a gesture of solidarity with the hunger strikers.</li>
+			<li>They must preserve their solidarity.</li>
+		</ol>
+		<p><a href="grab">grab </a>v. 抓取；吸引注意 n. 抓；掠夺；不法所得</p>
+		<ol>
+			<li>She grabbed the child's hand and ran.</li>
+			<li>We grabbed for the life raft.</li>
+		</ol>
+		<p><a href="unanimous">unanimous </a>adj. 全体一致的</p>
+		<ol>
+			<li>Unanimous agreement must be reached for this plan to go ahead.</li>
+			<li>The committee were unanimous that the application should be turned down.</li>
+		</ol>
+		<p><a href="miser">miser </a>n. 守财奴</p>
+		<ol>
+			<li>The miser lost all his possessions.</li>
+			<li>'A generous miser' is a contradiction in terms.</li>
+		</ol>
+		<p><a href="inflation">inflation </a>n. 膨胀</p>
+		<ol>
+			<li>The new government's prime task is to reduce the level of inflation.</li>
+			<li>Is inflation symptomatic of economic decline?</li>
+		</ol>
+		<p><a href="geology">geology </a>n. 地质学；地质情况</p>
+		<ol>
+			<li>The students went to study the geology of that region.</li>
+			<li>Geology here passes over the continuation of the history of man to Archeology.</li>
+		</ol>
+		<p><a href="Venus">Venus </a>n. 金星</p>
+		<ol>
+			<li>Venus and Earth are the same size.</li>
+			<li>The sculptor is working on a sculpture of Venus.</li>
+		</ol>
+		<p><a href="untold">untold </a>adj. 数不清的</p>
+		<ol>
+			<li>untold misery/wealth</li>
+			<li>These gases cause untold damage to the environment.</li>
+		</ol>
+		<p><a href="cradle">cradle </a>n. 摇篮；发祥地 v. 放在摇篮内；抚育</p>
+		<ol>
+			<li>cradle the cat in his arms</li>
+			<li>Greece is the cradle of Western civilization.</li>
+		</ol>
+		<p><a href="haste">haste </a>n. 急速 v. 匆忙；赶紧</p>
+		<ol>
+			<li>In her haste to complete the work on time, she made a number of mistakes.</li>
+			<li>The letter had clearly been written in haste.</li>
+		</ol>
+		<p><a href="simultaneous">simultaneous </a>adj. 同时的</p>
+		<ol>
+			<li>The explosion was timed to be simultaneous with the plane's take-off.</li>
+			<li>I could never do simultaneous equations.</li>
+		</ol>
+		<p><a href="womb">womb </a>n. 子宫</p>
+		<ol>
+			<li>It still lies in the womb of time.</li>
+		</ol>
+		<p><a href="likeness">likeness </a>n. 相像</p>
+		<ol>
+			<li>There was uncommon likeness between the teo boys.</li>
+			<li>I think the painter has produced a very true likeness.</li>
+		</ol>
+		<p><a href="emigrate">emigrate </a>v. 移民</p>
+		<ol>
+			<li>He emigrated from Britain to Australia in order to find a better job.</li>
+		</ol>
+		<p><a href="subliminal">subliminal </a>adj. 下意识的</p>
+		<p><a href="integral">integral </a>adj. 完整的；必需的 n. 积分；完整；部分</p>
+		<ol>
+			<li>The kitchen is an integral part of a house.</li>
+		</ol>
+		<p><a href="dizzy">dizzy </a>adj. 晕眩的；傻的；困惑的 v. 使困惑；使晕眩</p>
+		<ol>
+			<li>We were dizzy by the strong wind.</li>
+			<li>a dizzy height</li>
+		</ol>
+		<p><a href="untie">untie </a>v. 解开</p>
+		<ol>
+			<li>I quickly untied the package and peeped inside.</li>
+			<li>untie a horse from a tree</li>
+		</ol>
+		<p><a href="contradict">contradict </a>v. 反驳</p>
+		<ol>
+			<li>Don't contradict your father.</li>
+			<li>The report contradict what we heard yesterday.</li>
+		</ol>
+		<p><a href="subsidiary">subsidiary </a>adj. 辅助的；附属的 n. 子公司</p>
+		<ol>
+			<li>This company has lots of subsidiaries.</li>
+			<li>Most of the group profit is contributed by the subsidiary in the far east.</li>
+		</ol>
+		<p><a href="waver">waver </a>n. 动摇；挥动者；烫发器 v. 摆动；摇曳；犹豫；颤抖</p>
+		<ol>
+			<li>He has never wavered in his claim that he is innocent.</li>
+			<li>His resolve began to waver.</li>
+		</ol>
+		<p><a href="reckless">reckless </a>adj. 不计后果的；鲁莽的；大意的</p>
+		<ol>
+			<li>Don't do anything reckless.</li>
+			<li>He's quite reckless of his own safety.</li>
+		</ol>
+		<p><a href="elapse">elapse </a>v. 逝去；过去</p>
+		<ol>
+			<li>Three years have elapsed since we met last time.</li>
+			<li>Weeks elapsed before we could start renovating.</li>
+		</ol>
+		<p><a href="jewellery">jewellery </a>n. 珠宝</p>
+		<ol>
+			<li>She likes to wear gold jewellery.</li>
+			<li>She wore so much jewellery that she seemed to be covered in gold.</li>
+		</ol>
+		<p><a href="spite">spite </a>n. 恶意；刁难 v. 刁难；伤害</p>
+		<ol>
+			<li>I loaded her shampoo bottle with ink, just out of spite.</li>
+			<li>They kept going in spite of their fears.</li>
+		</ol>
+		<p><a href="rash">rash </a>adj. 轻率的 n. 皮疹；突然大量出现的事物</p>
+		<ol>
+			<li>Don't do anything rash until i get there.</li>
+			<li>a rash of burglaries</li>
+		</ol>
+		<p><a href="civilian">civilian </a>adj. 平民的 n. 罗马法专家；平民</p>
+		<ol>
+			<li>He resigned his commission to take up a civilian job.</li>
+			<li>civilian clothes; a civilian career</li>
+		</ol>
+		<p><a href="irrigation">irrigation </a>n. 灌溉</p>
+		<ol>
+			<li>We used the money to set up a irrigation project.</li>
+			<li>There the irrigation canal links up with the reservoir.</li>
+		</ol>
+		<p><a href="revolve">revolve </a>v. 旋转；考虑；循环</p>
+		<ol>
+			<li>The Earth revolves around the sun.</li>
+			<li>Their troubles revolve around money management.</li>
+		</ol>
+		<p><a href=""></a></p>
+	</div>
+</div>
+</body>
+</html>
